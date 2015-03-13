@@ -1,0 +1,21 @@
+{
+	"name": "angular-szkolenie",
+	"version": "0.1",
+	"main": "index.html",
+	"ignore": [
+		"**/.*", "libs", "node_modules", "bower_components", "test", "tests"
+	],
+	"dependencies": {
+		"angular": "latest",
+		"angular-route": "latest",
+		"angular-resource": "latest",
+		"angular-bootstrap": "latest",
+		"angular-mocks": "latest",
+		"angular-cookies": "latest",
+		"ng-file-upload": "latest",
+		"ngmap": "latest",
+		"bootstrap": "latest",
+		"underscore": "latest"
+	},
+	"license": "MIT"
+}

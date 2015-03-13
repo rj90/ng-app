@@ -1,0 +1,52 @@
+<article class="product-item row">
+    <div class="col-lg-7">
+        <div style="font-weight: bold;">{{dataCopy.title}}</div>
+        <div class="truncate">{{dataCopy.description}}</div>
+        <br/>
+        <a class="btn btn-primary btn-xs" ng-href="#/product-details/{{dataCopy.id}}">więcej</a>
+    </div>
+    <div class="col-lg-2">
+        <a href="{{dataCopy.img}}"
+           rel="gal"
+           title="{{dataCopy.title}}"
+           class="colorbox col-lg-3"
+           style="width: auto; padding: 0;">
+            <img ng-src="{{dataCopy.img}}" width="150" class="img-thumbnail"/>
+        </a>
+    </div>
+
+    <div class="col-lg-3 text-right" style="line-height: 32px;">
+        <div class="form-group form-inline">
+            <label for="price" class="">cena:</label>
+            <input id="price"
+                   style="width: 70px;"
+                   class="form-control"
+                   type="text"
+                   ng-model="dataCopy.price"
+                   ng-disabled="!$root.common.access">
+            <span>zł</span>
+        </div>
+
+        <div ng-if="$root.common.access"
+             class="form-group">
+            <button class="btn btn-danger btn-sm"
+                    ng-click="delete({item: dataCopy})">
+                usuń
+            </button>
+        </div>
+        <div ng-if="!$root.common.access"
+             class="form-group form-inline">
+            <input class="form-control"
+                   type="number"
+                   min="1"
+                   ng-init="$parent.quantity = 1"
+                   ng-model="$parent.quantity"
+                   style="width: 75px;"/>
+            <button class="btn btn-primary btn-sm"
+                    ng-click="addToBasket()">
+                do koszyka
+            </button>
+        </div>
+    </div>
+</article>
+<hr/>

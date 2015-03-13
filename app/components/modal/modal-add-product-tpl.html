@@ -1,0 +1,50 @@
+<form name="productForm" ng-init="errorMsg = false;" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">
+            nowy produkt
+        </h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <input-dctv type="text"
+                        model="title"
+                        required="true"
+                        error-msg="errorMsg">
+                nazwa produktu:
+            </input-dctv>
+        </div>
+
+        <div class="form-group">
+            <input-dctv type="textarea"
+                        model="description"
+                        required="true"
+                        error-msg="errorMsg">
+                opis produktu:
+            </input-dctv>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-lg-12">zdjęcie:</div>
+            <upload-dctv class="col-lg-6"
+                         data="img"
+                         error-msg="errorMsg">
+            </upload-dctv>
+            <div class="col-lg-6">
+                <img ng-src="{{img}}" width="130" alt=""/>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <input-dctv type="number"
+                        model="price"
+                        required="true"
+                        error-msg="errorMsg">
+                cena:
+            </input-dctv>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok(productForm)">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

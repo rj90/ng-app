@@ -1,0 +1,55 @@
+<div>
+    <div>
+        <label for="search">wyszukaj produkt:</label>
+        <input type="search" id="search" autofocus class="form-control" ng-model="searchControl.search"/>
+x{{searchControl}}
+        <div>
+            <div>ilość produków:
+                <span>{{(apiInterfaceSrv.items | filter:searchControl.search).length}}</span> /
+                <span>{{apiInterfaceSrv.items.length}}</span>
+            </div>
+            <div>numer strony: {{paginationSettings.currentPage}} / {{paginationSettings.numPages}}</div>
+        </div>
+        <hr/>
+    </div>
+    <div>sortowanie:</div>
+    <div class="form-inline">
+        <select ng-init="searchControl.sort='price'"
+                class="form-control"
+                ng-model="searchControl.sort"
+                ng-options="item for item in ['title', 'price']">
+        </select>
+
+        <div class="btn-group" style="margin-left: 5px;">
+            <div class="btn btn-primary btn-sm"
+                 ng-click="searchControl.reverse=true"
+                 ng-class="{'active': searchControl.reverse, 'normal': !searchControl.reverse}">
+                <i class="glyphicon glyphicon-sort-by-attributes-alt"></i>
+            </div>
+            <div class="btn btn-primary btn-sm"
+                 ng-click="searchControl.reverse=false"
+                 ng-class="{'active': !searchControl.reverse, 'normal': searchControl.reverse}">
+                <i class="glyphicon glyphicon-sort-by-attributes"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <hr/>
+    <div>
+        <div class="pull-left" style="line-height: 35px;">na stronie:&nbsp;</div>
+        <select class="form-control pull-left"
+                style="width: 80px;"
+                ng-model="paginationSettings.itemsPerPage"
+                ng-options="item for item in [2, 5, 10]">
+        </select>
+    </div>
+    <div class="clearfix"></div>
+    <div ng-if="$root.common.access">
+        <hr/>
+        <button class="btn btn-success"
+                ng-click="apiInterfaceSrv.add()">
+            dodaj produkt
+        </button>
+    </div>
+</div>

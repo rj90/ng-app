@@ -1,0 +1,25 @@
+<div class="container product">
+    <div class="col-lg-3 well">
+        <div ng-init="searchControl = {}" ng-include="'views/products/search.html'"></div>
+    </div>
+    <div class="col-lg-9">
+        <product-item-dctv
+                ng-repeat="item in apiInterfaceSrv.items |
+                filter:searchControl.search |
+                startFromFtr:(paginationSettings.currentPage-1)*paginationSettings.itemsPerPage |
+                limitTo:paginationSettings.itemsPerPage |
+                orderBy:searchControl.sort:searchControl.reverse"
+                data="item"
+                ng-repeat="item in apiInterfaceSrv.items"
+                update="apiInterfaceSrv.update(item)"
+                delete="apiInterfaceSrv.delete(item)"></product-item-dctv>
+        <pagination total-items="(apiInterfaceSrv.items | filter:searchControl.search).length"
+                    ng-model="paginationSettings.currentPage"
+                    max-size="paginationSettings.maxSize"
+                    rotate="false"
+                    class="pagination-sm"
+                    items-per-page="paginationSettings.itemsPerPage"
+                    num-pages="paginationSettings.numPages">
+        </pagination>
+    </div>
+</div>

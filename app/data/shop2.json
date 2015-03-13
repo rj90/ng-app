@@ -1,0 +1,34 @@
+{
+  "status": 1,
+  "data": {
+    "name": "sklep w Kołobrzegu",
+    "img": "http://img2.garnek.pl/a.garnek.pl/008/855/8855968_800.0.jpg/witryna-sklepowa-wlochy.jpg",
+    "position": {
+      "lat": "54.1750225",
+      "lng": "15.599846"
+    },
+    "tabs": [
+      {
+        "title": "Opis",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+      },
+      {
+        "title": "Godziny otwarcia",
+        "content": {
+          "pn-pt": "8:00 - 18:00",
+          "sobota": "9-19",
+          "niedziela": "12-20"
+        }
+      },
+      {
+        "title": "Kontakt",
+        "content": {
+          "telefon": "693439439",
+          "fax": "92939393",
+          "mobile": "99888485"
+        }
+      }
+    ]
+  }
+
+}

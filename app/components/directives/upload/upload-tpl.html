@@ -1,0 +1,20 @@
+<button ng-file-select
+        required
+        ng-model="files"
+        ng-form="uploadDctv"
+        class="btn btn-primary">
+    Attach Any File
+</button>
+<div ng-file-drop
+     ng-model="files"
+     class="drop-box"
+     drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+     multiple="false"
+     allow-dir="true"
+     accept="image/*,application/pdf">
+    Drop Image here
+</div>
+<small class="text-danger"
+       ng-if="uploadDctv.$invalid && errorMsg">
+    Pole wymagane
+</small>

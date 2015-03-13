@@ -1,0 +1,51 @@
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/products" style="color: white; font-weight: 600; ">
+                    <span style="background: #286090; color: white; padding: 3px 5px; border-radius: 3px; margin-left: 4px;">
+                        MAJ SZOP
+                    </span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/products">Produkty</a></li>
+                    <li><a href="#/faq">Faq</a></li>
+                    <li><a href="#/contact">Kontakt</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Placówki <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#/shops/shop1">sklep w Busku zdrój</a>
+                                <a href="#/shops/shop2">sklep w Kołobrzegu</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="margin-top: 10px;">
+                        <span class="preloader" ng-class="{show: $root.common.unsaved}"></span>
+                    </li>
+                    <li>
+                        <a href="">
+                            {{$root.common.basket}}
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <button class="btn btn-info btn-sm" ng-if="!$root.common.access" ng-click="login()">zaloguj</button>
+                        <button class="btn btn-danger btn-sm" ng-if="$root.common.access" ng-click="logout()">wyloguj: {{$root.common.user}}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

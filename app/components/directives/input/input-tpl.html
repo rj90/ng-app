@@ -1,0 +1,33 @@
+<div ng-form="inputDctv">
+    <div ng-transclude></div>
+
+    <input class="form-control"
+           ng-model="$parent.model"
+           ng-minlength=4
+           ng-required="required"
+           type="text"
+           ng-if="type === 'text'"/>
+
+    <input class="form-control"
+           ng-model="$parent.model"
+           ng-minlength=1
+           ng-required="required"
+           type="number"
+           ng-if="type === 'number'"/>
+
+    <input class="form-control"
+           ng-model="$parent.model"
+           ng-required="required"
+           type="email"
+           ng-if="type === 'email'" />
+
+  <textarea class="form-control"
+            ng-model="$parent.model"
+            name="user.message"
+            ng-minlength=4
+            ng-required="required"
+            rows="5"
+            ng-if="type === 'textarea'"></textarea>
+
+    <small class="text-danger" ng-if="!inputDctv.$valid && errorMsg">pole wymagane</small>
+</div>
